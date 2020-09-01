@@ -222,7 +222,7 @@ function reveal(id) {
   } else {
     var text = document.getElementById("report-" + id);
     text.innerHTML = hints[id - 1];
-    document.getElementById(id).style.backgroundColor = "#73ff73";
+    document.getElementById(id).classList.add("success");
   }
 }
 
