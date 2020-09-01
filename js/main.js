@@ -134,13 +134,11 @@ function start() {
 
 function generate() {
   if (dataArray.length === 0) {
-    document.getElementById("confirmGen").innerHTML =
-      "Please select a seed to generate hints.";
+    document.getElementById("confirmGen").innerHTML = "Please select a seed to generate hints.";
   } else {
     document.getElementById("gen").classList.add("success");
     document.getElementById("gen").disabled = true;
-    document.getElementById("confirmGen").innerHTML =
-      "Hints have been generated! Refresh to play again.";
+    document.getElementById("confirmGen").innerHTML = "Hints have been generated! Refresh to play again.";
     document.getElementById("confirmShare").innerHTML =
       "Hints have been generated! Click Save Hints to send them to other players.";
     document.getElementById("page").disabled = true;
@@ -182,10 +180,8 @@ function uploadHints() {
   document.getElementByid("upload-btn").classList.add("success");
   document.getElementById("upload-btn").disabled = true;
   document.getElementById("gen").disabled = true;
-  document.getElementById("confirmShare").innerHTML =
-    "Hints have been uploaded! Refresh to play again.";
-  document.getElementById("confirmGen").innerHTML =
-    "Hints have been uploaded! Refresh to play again.";
+  document.getElementById("confirmShare").innerHTML = "Hints have been uploaded! Refresh to play again.";
+  document.getElementById("confirmGen").innerHTML = "Hints have been uploaded! Refresh to play again.";
   document.getElementById("page").disabled = true;
   document.getElementById("report").disabled = true;
   document.getElementById("abilities").disabled = true;
@@ -220,11 +216,9 @@ function getLists() {
 
 function reveal(id) {
   if (dataArray.length === 0) {
-    document.getElementById("report-" + id).innerHTML =
-      "Please select a seed to generate hints.";
+    document.getElementById("report-" + id).innerHTML = "Please select a seed to generate hints.";
   } else if (hints.length === 0) {
-    document.getElementById("report-" + id).innerHTML =
-      "Hints have not been generated.";
+    document.getElementById("report-" + id).innerHTML = "Hints have not been generated.";
   } else {
     var text = document.getElementById("report-" + id);
     text.innerHTML = hints[id - 1];
@@ -344,11 +338,7 @@ var proofLocations = [];
 function getProofs(world) {
   var proof = false;
   for (var i = 0; i < world.length; i++) {
-    if (
-      world.includes(proofs[0]) ||
-      world.includes(proofs[1]) ||
-      world.includes(proofs[2])
-    ) {
+    if (world.includes(proofs[0]) || world.includes(proofs[1]) || world.includes(proofs[2])) {
       proof = true;
     }
   }
@@ -536,12 +526,7 @@ function createHints() {
 
   for (var i = 0; i < 13; i++) {
     hints.push(writeHint(selectedworlds[i], worldChecks[selectedworlds[i]]));
-    savedhints.push(
-      codeChecks[selectedworlds[i]] +
-        "," +
-        (worldChecks[selectedworlds[i]] + 32) +
-        "."
-    );
+    savedhints.push(codeChecks[selectedworlds[i]] + "," + (worldChecks[selectedworlds[i]] + 32) + ".");
   }
 }
 
